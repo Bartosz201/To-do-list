@@ -4,6 +4,11 @@
 
 .content__section {
     background-color: white;
+    margin-top: 10px;
+}
+
+.content__section--tasks {
+    min-height: 180px;
 }
 
 .content__header {
