@@ -1,0 +1,12 @@
+.content {
+    margin: 10px 20px 0px 20px;
+}
+
+.content__section {
+    background-color: white;
+}
+
+.content__header {
+    padding: 20px;
+    border-bottom: solid 3px #eee;
+}
