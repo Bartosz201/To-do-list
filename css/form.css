@@ -1,11 +1,11 @@
-.form{
+.form {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-column-gap: 20px;
     padding: 20px;
 }
 
-.form__input{
+.form__input {
     padding: 8px;
     border: solid 2px #e0e0e0;
 }
@@ -14,5 +14,13 @@
     padding: 10px;
     background-color: teal;
     color: white;
-    border: none;  
+    border: none;
+}
+
+.form__button:hover {
+    background-color: hsl(180, 100%, 30%);
+}
+
+.form__button:active {
+    background-color: hsl(180, 100%, 35%);
 }
