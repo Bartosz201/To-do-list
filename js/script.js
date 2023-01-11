@@ -1,14 +1,5 @@
 {
-    const tasks = [
-        {
-            content: "zrobić pranie",
-            done: false,
-        },
-        {
-            content: "kupić chleb",
-            done: true,
-        },
-    ]
+    const tasks = []
 
     const removeTask = () => {
         const removeButons = document.querySelectorAll(".js-remove")
@@ -38,7 +29,7 @@
         for (const task of tasks) {
             htmlString += `
             <li class="list__item ${task.done ? "list__item--done" : ""}">
-                <button class="js-done">zrobione</button>${task.content}<button class="js-remove">usuń</button>
+                <button class="list__button js-done">zrobione</button>${task.content}<button class="list__buton js-remove">usuń</button>
             </li>
             `;
         }
