@@ -23,8 +23,25 @@
         document.querySelector(".js-tasks").innerHTML = htmlString;
     }
 
+    const addedNewTask = () =>{
+        const newTaskElement = document.querySelector(".js-newTask").value.trim();
+        tasks.push({
+            content: newTaskElement,
+            done: false,
+        });
+        console.log(tasks)
+    }
+
     const init = () => {
         render();
+
+        const formElement = document.querySelector(".js-form");
+        formElement.addEventListener("submit", (event) =>{
+            event.preventDefault();
+            addedNewTask();
+            render();
+
+        })
 
     }
     init();
