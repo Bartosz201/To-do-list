@@ -10,6 +10,17 @@
         },
     ]
 
+    const removeTask = () => {
+        const removeButons = document.querySelectorAll(".js-remove")
+
+        removeButons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                tasks.splice(index, 1)
+                render();
+            });
+        });
+    }
+
     const render = () => {
         let htmlString = "";
 
@@ -21,6 +32,7 @@
             `;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
+        removeTask();
     }
 
     const addedNewTask = (newTaskElement) => {
