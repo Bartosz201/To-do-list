@@ -1,0 +1,14 @@
+.section {
+    background-color: white;
+    margin-top: 10px;
+}
+
+.section--tasks {
+    min-height: 180px;
+}
+
+.section__header {
+    padding: 20px;
+    margin: 0;
+    border-bottom: solid 2px #e0e0e0;
+}

@@ -20,14 +20,14 @@
 }
 
 .list__button {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background-color: green;
     border: none;
     margin: 10px;
     flex-shrink: 0;
 
-    font-size: 25px;
+    font-size: 20px;
     color: white;
 }
 
