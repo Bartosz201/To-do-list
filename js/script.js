@@ -1,26 +1,31 @@
 {
-    const tasks = []
+    const tasks = [];
 
     const removeTask = () => {
         const removeButons = document.querySelectorAll(".js-remove")
 
         removeButons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
-                tasks.splice(index, 1)
+                tasks.splice(index, 1);
                 render();
             });
         });
     }
 
     const toggleDoneTask = () => {
-        const toggleDoneButons = document.querySelectorAll(".js-done")
+        const toggleDoneButons = document.querySelectorAll(".js-done");
 
         toggleDoneButons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
-                tasks[index].done = !tasks[index].done
+                tasks[index].done = !tasks[index].done;
                 render();
             });
         });
+    }
+
+    const focusInput = () => {
+        const newTaskElement = document.querySelector(".js-newTask");
+        newTaskElement.focus();
     }
 
     const render = () => {
@@ -39,29 +44,29 @@
         toggleDoneTask();
     }
 
-    const addedNewTask = (newTaskElement) => {
+    const addedNewTask = (newTaskElementValue) => {
         tasks.push({
-            content: newTaskElement,
+            content: newTaskElementValue,
             done: false,
         });
     }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        const newTaskElement = document.querySelector(".js-newTask").value.trim();
-        if (newTaskElement === "") {
+        const newTaskElementValue = document.querySelector(".js-newTask").value.trim();
+        if (newTaskElementValue === "") {
             return
         }
-        addedNewTask(newTaskElement);
+        addedNewTask(newTaskElementValue);
         document.querySelector(".js-newTask").value = "";
         render();
+        focusInput();
     }
 
     const init = () => {
         render();
         const formElement = document.querySelector(".js-form");
-        formElement.addEventListener("submit", onFormSubmit)
-
+        formElement.addEventListener("submit", onFormSubmit);
     }
     init();
 }
