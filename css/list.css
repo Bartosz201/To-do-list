@@ -31,9 +31,9 @@
     border: none;
     margin: 10px;
     flex-shrink: 0;
-
     font-size: 20px;
     color: white;
+    transition: background 1s;
 }
 
 .list__button:hover {
