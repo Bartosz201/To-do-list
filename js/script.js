@@ -7,7 +7,9 @@
 
         removeButons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
-                tasks.splice(index, 1);
+                const tasksBeforRemoved = tasks.slice(0, index);
+                const tasksAfterRemoved = tasks.slice(index + 1);
+                tasks = [...tasksBeforRemoved, ...tasksAfterRemoved];
                 render();
             });
         });
@@ -18,7 +20,12 @@
 
         toggleDoneButons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
-                tasks[index].done = !tasks[index].done;
+                const tasksBeforToggle = tasks.slice(0, index);
+                const tasksAfterToggle = tasks.slice(index + 1);
+                let {content, done} = tasks[index];
+                done = !done;
+                
+                tasks =[...tasksBeforToggle, {content, done}, ...tasksAfterToggle ];
                 render();
             });
         });
