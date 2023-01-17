@@ -1,5 +1,5 @@
 {
-    const tasks = [];
+    let tasks = [];
 
     const removeTask = () => {
         const removeButons = document.querySelectorAll(".js-remove")
@@ -47,12 +47,25 @@
         if (tasks.length > 0) {
             document.querySelector(".js-buttons").innerHTML = `
         <button class="section__button">Ukryj ukończone</button>
-        <button class="section__button">Ukończ wszystkie</button>`;
+        <button ${tasks.every(task => task.done === true) ? "disabled" : ""} class="section__button js-doneAll">Ukończ wszystkie</button>`;
         }
         else {
             document.querySelector(".js-buttons").innerHTML = "";
         }
 
+    }
+
+
+    const doneAllTasks = () =>{
+        if(tasks.length > 0){
+            const DoneAllButton = document.querySelector(".js-doneAll")
+            
+            DoneAllButton.addEventListener("click", () =>{
+               tasks = tasks.map((task) => ({...task, done: true}));
+               render();
+            })
+            
+        }
     }
 
     const render = () => {
@@ -61,6 +74,7 @@
 
         removeTask();
         toggleDoneTask();
+        doneAllTasks();
     }
 
     const addedNewTask = (newTaskElementValue) => {
