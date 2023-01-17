@@ -12,3 +12,47 @@
     margin: 0;
     border-bottom: solid 2px #e0e0e0;
 }
+
+.section__header-second {
+    border: none;
+}
+
+.section__container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    border-bottom: solid 2px #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .section__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.section__buttonsContainer {
+    align-self: center;
+    
+}
+@media (max-width: 768px) {
+    .section__buttonsContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.section__button {
+    color: teal;
+    background: none;
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    transition: color 1s;
+}
+
+.section__button:hover {
+    color: hsl(180, 100%, 35%);
+}
+
+.section__button:disabled{
+    color: #e0e0e0;
+}

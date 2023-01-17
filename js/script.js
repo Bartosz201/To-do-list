@@ -28,7 +28,7 @@
         newTaskElement.focus();
     }
 
-    const render = () => {
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
@@ -41,6 +41,24 @@
             `;
         }
         document.querySelector(".js-tasks").innerHTML = htmlString;
+    }
+
+    const renderButons = () => {
+        if (tasks.length > 0) {
+            document.querySelector(".js-buttons").innerHTML = `
+        <button class="section__button">Ukryj ukończone</button>
+        <button class="section__button">Ukończ wszystkie</button>`;
+        }
+        else {
+            document.querySelector(".js-buttons").innerHTML = "";
+        }
+
+    }
+
+    const render = () => {
+        renderTasks();
+        renderButons();
+
         removeTask();
         toggleDoneTask();
     }
